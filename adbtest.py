@@ -42,7 +42,7 @@ def get_friends():
     swipe_up(1/2, 2000)
 def is_del(person, count):
     if count == "1":
-        time.sleep(2)
+        time.sleep(5)
         print('点击微信搜索框')
         driver.find_element_by_id('com.tencent.mm:id/he6').click()
         time.sleep(2)
@@ -52,12 +52,14 @@ def is_del(person, count):
         print('点击搜索到的好友')
         driver.find_element_by_id('com.tencent.mm:id/ir3').click()
         # 转账
+        time.sleep(2)
         driver.find_element_by_id('com.tencent.mm:id/auj').click()
         print("点击加号")
         driver.find_element_by_id('com.tencent.mm:id/au0').click()
         time.sleep(2)
         print("转账中")
         driver.find_elements_by_id('com.tencent.mm:id/rr')[5].click()
+        time.sleep(2)
         print("输入钱数")
         driver.find_element_by_id('com.tencent.mm:id/e64').click()
         time.sleep(2)
@@ -69,6 +71,9 @@ def is_del(person, count):
             good_friend.append(person)
         else:
             bad_friend.append(person)
+        for i in range (0,6):
+            driver.keyevent(4)
+            sleep(1)
         return result
     return
 def check(string, sub_str): 
@@ -111,4 +116,5 @@ if __name__ == '__main__':
             return_value = is_del(val, "1")
         else:
             return_value = is_del(val, "")
-        print("we are good friend : " +val)
+        print(val)
+    
