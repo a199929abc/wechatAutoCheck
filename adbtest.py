@@ -94,6 +94,7 @@ def delate():
     time.sleep(2)
     driver.keyevent(4)  
     time.sleep(2)
+    driver.keyevent(4) 
     driver.find_element_by_id('com.tencent.mm:id/d8').click()
     time.sleep(2)
     driver.find_element_by_id('com.tencent.mm:id/h8t').click()
@@ -105,7 +106,7 @@ def delate():
     driver.find_element_by_id('com.tencent.mm:id/ffp').click()
     time.sleep(2)
     #click confirm ->tuichu*2->com.tencent.mm:id/d8->com.tencent.mm:id/h8t->com.tencent.mm:id/d8->
-    #->	com.tencent.mm:id/ijq->	com.tencent.mm:id/ffp 删除
+    #->	com.tencent.mm:id/ijq->	com.tencent.mm:id/ffp 
     return 0
 
 if __name__ == '__main__':
@@ -118,10 +119,10 @@ if __name__ == '__main__':
     #driver.find_element_by_id('com.tencent.mm:id/dtx').click()
     #login to the wechat
     friends=[]
-    i=0
+    i=1
     while(friends_end_flag==True):
         get_friends()
-        if(i==54):
+        if(i==1):
             friends_end_flag=False
         i+=1
         print(i)
