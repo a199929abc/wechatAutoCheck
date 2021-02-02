@@ -52,9 +52,10 @@ def is_del(person, count):
         #print('点击搜索到的好友')
         driver.find_element_by_id('com.tencent.mm:id/ir3').click()
         # 转账
-        time.sleep(2)
+        time.sleep(1)
         driver.find_element_by_id('com.tencent.mm:id/auj').click()
         #print("点击加号")
+        time.sleep(1)
         driver.find_element_by_id('com.tencent.mm:id/au0').click()
         time.sleep(2)
         #print("转账中")
@@ -64,7 +65,7 @@ def is_del(person, count):
         driver.find_element_by_id('com.tencent.mm:id/e64').click()
         time.sleep(2)
         driver.find_element_by_id('com.tencent.mm:id/e6c').click()
-        time.sleep(6)
+        time.sleep(5)
         souce = driver.page_source
         result=check(souce)
         if result==True:
@@ -119,10 +120,10 @@ if __name__ == '__main__':
     #driver.find_element_by_id('com.tencent.mm:id/dtx').click()
     #login to the wechat
     friends=[]
-    i=1
+    i=0
     while(friends_end_flag==True):
         get_friends()
-        if(i==1):
+        if(i==54):
             friends_end_flag=False
         i+=1
         print(i)
